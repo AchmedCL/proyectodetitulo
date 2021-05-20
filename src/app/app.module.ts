@@ -8,13 +8,15 @@ import { RegistraralumnoComponent } from './views/alumno/registraralumno/registr
 import { NavbarComponent } from './navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
+import { InicioSesionComponent } from './views/inicio-sesion/inicio-sesion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistroComponent,
     RegistraralumnoComponent,
-    NavbarComponent
+    NavbarComponent,
+    InicioSesionComponent
   ],
   imports: [
     BrowserModule,
