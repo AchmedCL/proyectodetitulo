@@ -10,9 +10,7 @@ export class RegistraralumnoComponent implements OnInit {
   newAlumnoForm = new FormGroup({
     nombreAlumno: new FormControl("",Validators.required),
     apellidoAlumno: new FormControl("",Validators.required),
-    email: new FormControl('', [
-      Validators.required,
-      Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
+    usuario: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
     confirmPassword: new FormControl('', Validators.required)
   })
@@ -26,7 +24,7 @@ export class RegistraralumnoComponent implements OnInit {
   }
 
   get email(): FormControl {
-    return getFormControlOrThrow('email', this.newAlumnoForm);
+    return getFormControlOrThrow('usuario', this.newAlumnoForm);
   }
 
   get password(): FormControl {

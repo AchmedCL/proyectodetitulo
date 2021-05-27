@@ -3,7 +3,18 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase : {
+    apiKey: "AIzaSyBnv91oH23mwaNehI0Imi7o_yfKKzGrAI8",
+    authDomain: "redsocial-a37a4.firebaseapp.com",
+    databaseURL: "https://redsocial-a37a4-default-rtdb.firebaseio.com",
+    projectId: "redsocial-a37a4",
+    storageBucket: "redsocial-a37a4.appspot.com",
+    messagingSenderId: "926173808858",
+    appId: "1:926173808858:web:71c67db80584f5500cbde3",
+    measurementId: "G-64E9D50F4E"
+  }
+
 };
 
 /*

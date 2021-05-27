@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "redsocial-a37a4": {
+      "hosting": {
+        "redsocial": [
+          "redsocial-a37a4"
+        ]
+      }
+    }
+  }
+}

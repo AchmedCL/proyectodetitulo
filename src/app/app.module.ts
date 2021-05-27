@@ -9,6 +9,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InicioSesionComponent } from './views/inicio-sesion/inicio-sesion.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { PerfilComponent } from './views/profesor/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +21,17 @@ import { InicioSesionComponent } from './views/inicio-sesion/inicio-sesion.compo
     RegistroComponent,
     RegistraralumnoComponent,
     NavbarComponent,
-    InicioSesionComponent
+    InicioSesionComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAnalyticsModule,
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
