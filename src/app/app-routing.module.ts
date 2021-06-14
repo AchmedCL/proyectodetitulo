@@ -19,7 +19,7 @@ const routes: Routes = [
     component: InicioSesionComponent,
   },
   {
-    path: 'perfilProfesor',
+    path: 'perfil',
     component: PerfilComponent,
   }
 ];

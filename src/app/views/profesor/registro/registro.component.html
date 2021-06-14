@@ -1,7 +1,7 @@
 <div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-5 bg-light p-4 rounded">
-            <form [formGroup]="newProfesorForm" >
+            <form [formGroup]="newProfesorForm" (ngSubmit)="signUp()">
                 <h1 class="text-dark center">Registro profesor</h1>
                 <br>
                 <div class="mb-3">

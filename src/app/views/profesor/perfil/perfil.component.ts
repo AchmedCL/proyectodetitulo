@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AuthserviceService } from 'src/app/services/auths/authservice.service';
 
 @Component({
   selector: 'app-perfil',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilComponent implements OnInit {
 
-  constructor() { }
+  constructor(private afAuth: AngularFireAuth, private authService: AuthserviceService) { }
 
   ngOnInit(): void {
+    const user = this.authService.getCurrentUser()
+    console.log();
+    
   }
 
 }

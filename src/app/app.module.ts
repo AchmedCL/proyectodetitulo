@@ -14,6 +14,8 @@ import { environment } from 'src/environments/environment';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { PerfilComponent } from './views/profesor/perfil/perfil.component';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AuthserviceService } from './services/auths/authservice.service';
 
 @NgModule({
   declarations: [
@@ -31,9 +33,10 @@ import { PerfilComponent } from './views/profesor/perfil/perfil.component';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthserviceService } from 'src/app/services/auths/authservice.service';
+import { getFormControlOrThrow } from 'src/app/shared/services/form';
 
 @Component({
   selector: 'app-registro',
@@ -18,9 +21,12 @@ export class RegistroComponent implements OnInit {
     codigoColegio: new FormControl('', Validators.required)
   })
   
-  constructor() { }
+  constructor(private authService: AuthserviceService, private afAuth: AngularFireAuth) { }
 
   ngOnInit(): void {
+  }
+  async signUp(){
+    const sign = await this.authService.emailSignUp(this.email.value,this.password.value);
   }
 
   get name(): FormControl {
@@ -39,7 +45,3 @@ export class RegistroComponent implements OnInit {
     return getFormControlOrThrow('confirmPassword', this.newProfesorForm);
   }
 }
-function getFormControlOrThrow(arg0: string, newUserForm: any): FormControl {
-  throw new Error('Function not implemented.');
-}
-

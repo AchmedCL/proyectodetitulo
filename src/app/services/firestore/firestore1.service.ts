@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Model } from 'src/app/models/model.model';
 
 @Injectable({
@@ -6,5 +7,5 @@ import { Model } from 'src/app/models/model.model';
 })
 export abstract class Firestore1Service<T extends Model> {
 
-  constructor() { }
+  constructor(private af:AngularFirestore) { }
 }
