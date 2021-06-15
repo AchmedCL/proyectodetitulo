@@ -5,16 +5,17 @@ import { Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
 import auth from '../../../../node_modules/firebase'
 import { first } from 'rxjs/operators';
+import { profesorData } from 'src/app/models/user-data.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthserviceService {
   
-  constructor( private afAuth: AngularFireAuth, private router: Router) {
+  constructor( private afAuth: AngularFireAuth, private router: Router, private afs: AngularFirestore) {
     this.user$ = afAuth.authState;
   }
-  
+
   user$: Observable<auth.User | null>;
   login(email: string, password: string)
   {
@@ -38,7 +39,7 @@ export class AuthserviceService {
       console.log('something wrong: ', err.message);
     })
   }
-
+ 
   logout(){
     this.afAuth.signOut().then(() =>{
       this.router.navigate(['/inicioSesion']);
