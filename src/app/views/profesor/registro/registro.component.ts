@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { profesorData } from 'src/app/models/user-data.model';
+import { profesorData, profesorDatafirestore } from 'src/app/models/user-data.model';
 import { AuthserviceService } from 'src/app/services/auths/authservice.service';
+import { UserService } from 'src/app/services/user.service';
 import { getFormControlOrThrow } from 'src/app/shared/services/form';
 
 @Component({
@@ -23,20 +24,39 @@ export class RegistroComponent implements OnInit {
     codigoColegio: new FormControl('', Validators.required)
   })
   profesorDatos: profesorData | undefined;
-  constructor(private authService: AuthserviceService, private afAuth: AngularFireAuth, private afs: AngularFirestore) { }
+  profesorUserData: profesorDatafirestore | undefined;
+
+  constructor(private authService: AuthserviceService, 
+      private afAuth: AngularFireAuth, 
+      private afs: AngularFirestore,
+      private userService:UserService
+    ) { }
 
   ngOnInit(): void {
   }
-  async signUp(){
-    this.profesorDatos={
-      email: this.email.value,
+  async signUp(): Promise<boolean>{
+    this.profesorDatos = {
       nombre: this.name.value,
-      password: this.password.value,
-      apellido: this.apellido.value,
-      codigoColegio: this.codigoColegio.value
+      apellido: this.email.value,
+      codigoColegio: this.codigoColegio.value,
+      password: this.password.value
+    };
+
+    const sign = await this.authService.emailSignUp(this.email.value,this.password.value,this.profesorDatos);
+    const user = await this.authService.getCurrentUser()
+    if(!user){
+      return false;
     }
-    this.afs.collection('users').add(this.profesorDatos);
-    const sign = await this.authService.emailSignUp(this.email.value,this.password.value);
+    this.profesorUserData = {
+      nombre: this.profesorDatos.nombre,
+      apellido: this.profesorDatos.apellido,
+      codigoColegio: this.profesorDatos.codigoColegio,
+      password: this.profesorDatos.password,
+      id: user.uid,
+      email: user.email
+    }
+    const newUser = await this.afs.collection('users').doc(user.uid).set(this.profesorUserData);
+    return true;
   }
 
   get name(): FormControl {

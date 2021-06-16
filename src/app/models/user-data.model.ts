@@ -9,14 +9,14 @@ export interface UserData extends Model{
 export interface profesorDatafirestore extends Model{
     id: string;
     email: string | null;
+    password: string;
     nombre: string;
     apellido: string;
     codigoColegio: string | null;
 }
 export interface profesorData{
-    email: string | null;
-    password: string;
     nombre: string;
     apellido: string;
     codigoColegio: string | null;
+    password: string;
 }
