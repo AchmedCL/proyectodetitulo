@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { MatSliderModule } from '@angular/material/slider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistroComponent } from './views/profesor/registro/registro.component';
@@ -16,6 +16,11 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { PerfilComponent } from './views/profesor/perfil/perfil.component';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthserviceService } from './services/auths/authservice.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import {MatToolbarModule} from '@angular/material/toolbar'; 
+import {MatIconModule} from '@angular/material/icon'; 
+import {MatCardModule} from '@angular/material/card'; 
 
 @NgModule({
   declarations: [
@@ -24,7 +29,8 @@ import { AuthserviceService } from './services/auths/authservice.service';
     RegistraralumnoComponent,
     NavbarComponent,
     InicioSesionComponent,
-    PerfilComponent
+    PerfilComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +40,12 @@ import { AuthserviceService } from './services/auths/authservice.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule,
   ],
   providers: [AuthserviceService],
   bootstrap: [AppComponent]

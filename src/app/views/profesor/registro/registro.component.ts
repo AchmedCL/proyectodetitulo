@@ -37,12 +37,12 @@ export class RegistroComponent implements OnInit {
   async signUp(): Promise<boolean>{
     this.profesorDatos = {
       nombre: this.name.value,
-      apellido: this.email.value,
+      apellido: this.lastName.value,
       codigoColegio: this.codigoColegio.value,
       password: this.password.value
     };
 
-    const sign = await this.authService.emailSignUp(this.email.value,this.password.value,this.profesorDatos);
+    const sign = await this.authService.emailSignUp(this.email.value,this.password.value);
     const user = await this.authService.getCurrentUser()
     if(!user){
       return false;
@@ -63,8 +63,8 @@ export class RegistroComponent implements OnInit {
     return getFormControlOrThrow('nombreProfesor', this.newProfesorForm);
   }
 
-  get apellido(): FormControl {
-    return getFormControlOrThrow('apellido', this.newProfesorForm);
+  get lastName(): FormControl {
+    return getFormControlOrThrow('apellidoProfesor', this.newProfesorForm);
   }
   get email(): FormControl {
     return getFormControlOrThrow('email', this.newProfesorForm);

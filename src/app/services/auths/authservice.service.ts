@@ -37,11 +37,12 @@ export class AuthserviceService {
     })
   }
 
-  async emailSignUp(email: string, password: string, data : profesorData)/*: Promise<boolean>*/{
+  async emailSignUp(email: string, password: string)/*: Promise<boolean>*/{
     //let result;
     //try {
       //result =  
       await this.afAuth.createUserWithEmailAndPassword(email, password)
+      await this.router.navigate(['perfil']);
     /*} catch (error) {
 
       console.log('something wrong: ');
