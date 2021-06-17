@@ -21,6 +21,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar'; 
 import {MatIconModule} from '@angular/material/icon'; 
 import {MatCardModule} from '@angular/material/card'; 
+import { MatButtonModule } from '@angular/material/button';
+import { GruposComponent } from './views/profesor/grupos/grupos.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import {MatCardModule} from '@angular/material/card';
     NavbarComponent,
     InicioSesionComponent,
     PerfilComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    GruposComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +49,7 @@ import {MatCardModule} from '@angular/material/card';
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
+    MatButtonModule,
   ],
   providers: [AuthserviceService],
   bootstrap: [AppComponent]
