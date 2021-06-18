@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { getFormControlOrThrow } from 'src/app/shared/services/form';
 
 @Component({
   selector: 'app-registraralumno',
@@ -34,7 +35,4 @@ export class RegistraralumnoComponent implements OnInit {
   get confirmPassword(): FormControl {
     return getFormControlOrThrow('confirmPassword', this.newAlumnoForm);
   }
-}
-function getFormControlOrThrow(arg0: string, newUserForm: any): FormControl {
-  throw new Error('Function not implemented.');
 }

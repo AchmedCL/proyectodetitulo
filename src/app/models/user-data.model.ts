@@ -13,6 +13,7 @@ export interface profesorDatafirestore extends Model{
     nombre: string;
     apellido: string;
     codigoColegio: string | null;
+    publicaciones: string[] | null;
 }
 export interface profesorData{
     nombre: string;

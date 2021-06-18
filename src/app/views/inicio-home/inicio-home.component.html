@@ -11,7 +11,6 @@
         <mat-card class="example-card">
             <mat-card-header> 
                 <mat-card-title>Mis grupos</mat-card-title>
-                <mat-card-subtitle>Subtitle</mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
                 <!-- saltar desde aqui -->
@@ -38,12 +37,13 @@
                 </mat-card-header>
                 <br>
                 <mat-card-content>
-                    <mat-form-field appearance="fill">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Titulo</mat-label>
                         <input formControlName="titulo" matInput placeholder="Ingrese titulo">
                     </mat-form-field>
                     <br>
-                    <mat-form-field appearance="fill">
-                        <mat-label>Textarea</mat-label>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Contenido</mat-label>
                         <textarea formControlName="cuerpoTexto" matInput placeholder="escriba algo bonito"></textarea>
                       </mat-form-field>
                       <mat-card-actions align="start">
@@ -51,7 +51,7 @@
                               <mat-icon class="mat-18">perm_media</mat-icon>
                           </button>
                           <span ></span>
-                          <button mat-button >Action</button>
+                          <button mat-raised-button color="primary">Publicar</button>
                       </mat-card-actions>
                 </mat-card-content>
                 
@@ -72,16 +72,8 @@
                 Excepturi, quos hic eius dolorum animi vel reprehenderit 
                 corporis adipisci quod expedita at nihil.
             </mat-card-content>
-            <mat-card-actions align="start">
-                <button mat-icon-button color="warn">
-                    <mat-icon class="mat-18">favorite</mat-icon>
-                </button>
-                <button mat-icon-button >
-                    <mat-icon class="mat-18">question_answer</mat-icon>
-                </button>
-                <button mat-button >+1</button>
-            </mat-card-actions>
         </mat-card>
+        <br>
     </div>
     <span class="example-spacer"></span>
     <span class="example-spacer"></span>

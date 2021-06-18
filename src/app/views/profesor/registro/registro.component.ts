@@ -53,7 +53,8 @@ export class RegistroComponent implements OnInit {
       codigoColegio: this.profesorDatos.codigoColegio,
       password: this.profesorDatos.password,
       id: user.uid,
-      email: user.email
+      email: user.email,
+      publicaciones: []
     }
     const newUser = await this.afs.collection('users').doc(user.uid).set(this.profesorUserData);
     return true;

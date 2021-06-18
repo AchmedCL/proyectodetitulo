@@ -1,23 +1,25 @@
 <div class="container mt-4">
     <div class="row justify-content-center">
-        <div class="col-5 bg-light p-4 rounded">
+        <div class="inicioSesionCard">
             <form [formGroup]="inicioSesionForm" (ngSubmit)="signIn()">
-                <h1 class="texte-dark center">Inicio sesion</h1>
-                <br>
-                <div class="mb-3">
-                    <label class="text-dark col-form-label" for="mail">E-mail o usuario</label>
-                    <input formControlName="email" type="email" id="mail" name="mail" placeholder="example@mail.com" class="form-control">
-                </div>
-                <div class="mb-3">
-                    <label class="text-dark col-form-label" for="password">Contraseña</label>
-                    <input formControlName="password" type="password" id="password" name="password" placeholder="Contraseña" class="form-control">
-                </div>
-                <div class="mt-5">
-                    <div class="mb-3 w-100">
-                        <button type="submit" class="btn btn-primary w-100">iniciar sesion</button>
-                    </div>
-                    <div class="mb-3 w-100 text-center"></div>
-                </div>
+                <mat-card class="inicioSesionCard">
+                    <mat-card-header>
+                        <mat-card-title class="titulo">Inicio sesion</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Email</mat-label>
+                                <input matInput formControlName="email" type="email"  placeholder="email@mail.com">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Contraseña</mat-label>
+                                <input matInput formControlName="password" type="password"  placeholder="contraseña">
+                        </mat-form-field>
+                    </mat-card-content>
+                    <mat-card-actions align="end">
+                        <button mat-raised-button color="primary" type="submit">Iniciar sesion</button>
+                    </mat-card-actions>
+                </mat-card>
             </form>
         </div>
     </div>
