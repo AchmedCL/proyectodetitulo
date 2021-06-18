@@ -53,35 +53,7 @@ export class AuthserviceService {
     }
     return await this.storeUserFirestore(result, data);*/
   }
-  // private async storeUserFirestore(credentials: UserCredential,data : profesorData): Promise<boolean>{
-  //   if (!credentials.user){
-  //     return false;
-  //   }
-
-  //   let user = await this.getStoredUser(credentials.user?.uid);
-  //   if(!user){
-  //     user = await this.updateStoredUser(credentials.user, data);
-  //   }
-  //   await this.goToPerfil(user);
-  //   return true;
-  // }
-  
-  // async goToPerfil(user: profesorDatafirestore): Promise<void>{
-    
-  // }
-  // async updateStoredUser(user: auth.User,data: profesorData): Promise<profesorDatafirestore>{
-  //   this.afs.doc(`users/${user.uid}`);
-  //   this.profesorDatos = {
-  //     id: user.uid,
-  //     email: user.email,
-  //     nombre: data.nombre,
-  //     apellido: data.apellido,
-  //     codigoColegio: data.codigoColegio,
-  //     password: data.password
-  //   };
-  //   await this.userService.create(this.profesorDatos,user.uid,true);
-  //   return this.profesorDatos;
-  // }
+ 
   async getStoredUser(id: string): Promise<profesorDatafirestore | null> {
     try {
         return await this.userService.getAsPromise(id);

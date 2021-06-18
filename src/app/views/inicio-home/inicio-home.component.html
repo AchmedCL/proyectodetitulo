@@ -29,7 +29,7 @@
     </div>
     <span class="example-spacer"></span>
     <div class="container">
-        <form [formGroup]="nuevaPublicacion">
+        <form [formGroup]="nuevaPublicacion" (ngSubmit)="crearNuevaPublicacion()">
             <mat-card class="publicacion-card">
                 <mat-card-header>
                     <div mat-card-avatar class="publicacion-header-image"></div>
@@ -39,22 +39,19 @@
                 <mat-card-content>
                     <mat-form-field appearance="outline">
                         <mat-label>Titulo</mat-label>
-                        <input formControlName="titulo" matInput placeholder="Ingrese titulo">
+                        <input formControlName="titulo" matInput type="text" placeholder="Ingrese titulo">
                     </mat-form-field>
                     <br>
                     <mat-form-field appearance="outline">
                         <mat-label>Contenido</mat-label>
-                        <textarea formControlName="cuerpoTexto" matInput placeholder="escriba algo bonito"></textarea>
+                        <textarea formControlName="cuerpoTexto" matInput type="text" placeholder="escriba algo bonito"></textarea>
                       </mat-form-field>
                       <mat-card-actions align="start">
-                          <button mat-icon-button>
-                              <mat-icon class="mat-18">perm_media</mat-icon>
-                          </button>
+                       
                           <span ></span>
                           <button mat-raised-button color="primary">Publicar</button>
                       </mat-card-actions>
                 </mat-card-content>
-                
             </mat-card>
         </form>
         <br>

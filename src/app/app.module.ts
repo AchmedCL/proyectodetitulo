@@ -26,6 +26,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input'; 
 import { GruposComponent } from './views/profesor/grupos/grupos.component';
 import { InicioHomeComponent } from './views/inicio-home/inicio-home.component';
+//import { MatFileUploadModule } from 'mat-file-upload';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { InicioHomeComponent } from './views/inicio-home/inicio-home.component';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    //MatFileUploadModule
   ],
   providers: [AuthserviceService],
   bootstrap: [AppComponent]
