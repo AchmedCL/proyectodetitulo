@@ -2,12 +2,13 @@
   <mat-toolbar color="primary">
     <span>Red social</span>
     <span></span>
-    <button mat-button >Home</button>
-    <button mat-button >Grupos</button>
+    <button mat-button routerLink="/home">Home</button>
+    <button mat-button routerLink="/grupos">Grupos</button>
     <button mat-button >Calendario</button>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with person icon">
-      <mat-icon>person</mat-icon>
+    <button mat-icon-button routerLink="perfil" class="example-icon" aria-label="Example icon-button with person icon">
+      <mat-icon>account_circle</mat-icon>
     </button>
   </mat-toolbar>
 </div>
+<br>

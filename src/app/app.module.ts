@@ -22,7 +22,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon'; 
 import {MatCardModule} from '@angular/material/card'; 
 import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input'; 
 import { GruposComponent } from './views/profesor/grupos/grupos.component';
+import { InicioHomeComponent } from './views/inicio-home/inicio-home.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,8 @@ import { GruposComponent } from './views/profesor/grupos/grupos.component';
     InicioSesionComponent,
     PerfilComponent,
     ToolbarComponent,
-    GruposComponent
+    GruposComponent,
+    InicioHomeComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +54,8 @@ import { GruposComponent } from './views/profesor/grupos/grupos.component';
     MatIconModule,
     MatCardModule,
     MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [AuthserviceService],
   bootstrap: [AppComponent]

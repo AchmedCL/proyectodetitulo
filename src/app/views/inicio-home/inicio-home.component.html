@@ -1,0 +1,89 @@
+<div style="display: flex; flex-direction: row;">
+    <div class="container row" >
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Mr. Juanito Alberto</mat-card-title>
+                <mat-card-subtitle>Colegio san juan de dios</mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+        <br>
+        <mat-card class="example-card">
+            <mat-card-header> 
+                <mat-card-title>Mis grupos</mat-card-title>
+                <mat-card-subtitle>Subtitle</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <!-- saltar desde aqui -->
+                <mat-card>
+                    <mat-card-header>
+                        <div mat-card-avatar class="group-header-image"></div>
+                        <mat-card-title>Programacion avanzada</mat-card-title>
+                        <mat-card-actions>
+                            <button mat-button>Ir</button>
+                        </mat-card-actions>
+                    </mat-card-header>
+                </mat-card>
+                
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <span class="example-spacer"></span>
+    <div class="container">
+        <form [formGroup]="nuevaPublicacion">
+            <mat-card class="publicacion-card">
+                <mat-card-header>
+                    <div mat-card-avatar class="publicacion-header-image"></div>
+                    <mat-card-title>Que desea publicar?</mat-card-title>
+                </mat-card-header>
+                <br>
+                <mat-card-content>
+                    <mat-form-field appearance="fill">
+                        <input formControlName="titulo" matInput placeholder="Ingrese titulo">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Textarea</mat-label>
+                        <textarea formControlName="cuerpoTexto" matInput placeholder="escriba algo bonito"></textarea>
+                      </mat-form-field>
+                      <mat-card-actions align="start">
+                          <button mat-icon-button>
+                              <mat-icon class="mat-18">perm_media</mat-icon>
+                          </button>
+                          <span ></span>
+                          <button mat-button >Action</button>
+                      </mat-card-actions>
+                </mat-card-content>
+                
+            </mat-card>
+        </form>
+        <br>
+        <!-- repetir desde aqui -->
+        <mat-card class="publicacion-card">
+            <mat-card-header>
+                <div mat-card-avatar class="publicacion-header-image"></div>
+                <mat-card-title>Titulo publicacion</mat-card-title>
+                <mat-card-subtitle>nombre publicador</mat-card-subtitle>
+            </mat-card-header>
+            <img matCardImage src="https://www.ealde.es/wp-content/uploads/2019/03/cloud-computing.jpg">
+            <mat-card-content>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Harum totam esse perferendis maiores sit molestias dolore. 
+                Excepturi, quos hic eius dolorum animi vel reprehenderit 
+                corporis adipisci quod expedita at nihil.
+            </mat-card-content>
+            <mat-card-actions align="start">
+                <button mat-icon-button color="warn">
+                    <mat-icon class="mat-18">favorite</mat-icon>
+                </button>
+                <button mat-icon-button >
+                    <mat-icon class="mat-18">question_answer</mat-icon>
+                </button>
+                <button mat-button >+1</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <span class="example-spacer"></span>
+    <span class="example-spacer"></span>
+    
+</div>

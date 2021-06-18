@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegistraralumnoComponent } from './views/alumno/registraralumno/registraralumno.component';
+import { InicioHomeComponent } from './views/inicio-home/inicio-home.component';
 import { InicioSesionComponent } from './views/inicio-sesion/inicio-sesion.component';
 import { GruposComponent } from './views/profesor/grupos/grupos.component';
 import { PerfilComponent } from './views/profesor/perfil/perfil.component';
@@ -26,7 +27,11 @@ const routes: Routes = [
   {
     path: 'grupos',
     component: GruposComponent,
-  }
+  },
+  {
+    path: 'home',
+    component: InicioHomeComponent,
+  },
 ];
 
 @NgModule({

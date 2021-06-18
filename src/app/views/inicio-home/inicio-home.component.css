@@ -1,0 +1,33 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+.example-icon {
+    padding: 0 14px;
+  }
+  .example-header-image {
+    background-image: url('https://s.france24.com/media/display/8c13820c-5b0e-11e9-bf90-005056a964fe/w:1280/p:4x3/gato.jpg');
+    background-size: cover;
+  }
+  .example-card {
+    max-width: 300px;
+    margin-left: 20px;
+  }
+  .group-header-image {
+    background-image: url('https://www.itseller.cl/wp-content/uploads/2020/06/edge-computing.jpg');
+    background-size: cover;
+  }
+  .example-spacer {
+    flex: 2;
+  }
+  .publicacion-card {
+    max-width: 500px;
+    margin-left: 20px;
+  }
+  .publicacion-header-image {
+    background-image: url('https://www.itseller.cl/wp-content/uploads/2020/06/edge-computing.jpg');
+    background-size: cover;
+  }
+  .spacer-buttons {
+    flex: 1 1 auto;
+  }
+  
